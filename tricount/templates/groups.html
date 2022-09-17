@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="d-flex gap-5">
+        {% for group in groups %}
+            <article class="media content-section border-dark rounded bg-light">
+                <div class=" media-body div-width">
+                    <h2><a class="h3 text-decoration-none text-dark" href="{{ url_for('group', group_id=group.id) }}">{{ group.title }}</a></h2>
+                    <p class="article-content text-muted">{{ group.description }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock content %}
